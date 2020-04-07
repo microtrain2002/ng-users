@@ -1,9 +1,9 @@
 <h1>Create a New User</h1>
 
 <form (ngSubmit)="onSubmit()" #createUser="ngForm">
-
+  
   <div *ngIf="errorMessage">{{errorMessage}}</div>
-
+  
   <div>
     <label for="username">Username</label>
     <input [(ngModel)]="user.username" type="text" name="username" id="username">
@@ -25,7 +25,7 @@
     <label for="last_name">Last Name</label>
     <input [(ngModel)]="user.last_name" type="text" name="last_name" id="last_name">
   </div>
-
+  
   <button type="submit">Submit</button>
 
 </form>

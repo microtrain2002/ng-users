@@ -13,7 +13,8 @@ import { User } from '../user';
 export class UserCreateComponent implements OnInit {
 
   user = new User();
-  errors: Array<any> = [];
+  // errors: Array<any> = [];
+  errors: any = [];
   errorMessage: string;
 
   constructor(
@@ -21,15 +22,15 @@ export class UserCreateComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void{}
 
-  response(response): void {
-    if (response.success === false) {
+  response(response): void{
+    if(response.success===false){
       this.errors = response.error.errors;
       this.errorMessage = response.error.message;
     }
 
-    if (response.success === true) {
+    if(response.success===true){
       this.router.navigate(['/users/view/', response.user._id]);
     }
   }
